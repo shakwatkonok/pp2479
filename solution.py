@@ -29,10 +29,8 @@ def welcome_assignment_answers(question):
 
 # Complete all the questions.
 
-
 if __name__ == "__main__":
     #use this space to debug and verify that the program works, added comments
-    #s
+    
     debug_question = "Are encoding and encryption the same? - Yes/No"
-
     print("welcome_assignment_answers(debug_question))
