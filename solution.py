@@ -18,14 +18,14 @@ def welcome_assignment_answers(question):
         answer = "No"
 
     elif question == "What is the MD5 hashing value to the following message: 'NYU Computer Networking' -":
-        answer = "42b76fe51778764973077a5a94056724"
+        string = "42b76fe51778764973077a5a94056724"
     elif question == "Is MD5 a secured hashing algorithm? - Yes/No":
         answer = "Yes"
 
     elif question == "What layer from the TCP/IP model the protocol DHCP belongs to?":
-        answer = ("4")
-    elif question == "What layer of the TCP/IP model the protocol TCP belongs to":
-        answer = ("3")
+        int = ("4")
+    elif question == "What layer of the TCP/IP model the protocol TCP belongs to?":
+        int = ("3")
 
         return (answer)
 
