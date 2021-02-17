@@ -10,13 +10,13 @@ def webServer(port=13331):
     #Fill in start
     serverSocket.bind((”,serverPort))
     serverSocket.listen(1)
-    print ‘Ready to serve…’
+    #print ‘Ready to serve…’
     connectionSocket, addr = serverSocket.accept
     #Fill in end
 
     while True:
         #Establish the connection
-        print('Ready to serve...')
+        #print('Ready to serve...')
         connectionSocket, addr = (13331)
         #Fill in start      #Fill in end
         try:
@@ -41,7 +41,7 @@ def webServer(port=13331):
         except IOError:
             pass
         
-            print '404 Not Found'
+            #print '404 Not Found'
             connectionSocket.send('\HTTP/1.1 404 Not Found\n\n')
             
             #Send response message for file not found (404)
