@@ -18,10 +18,10 @@ def webServer(port=13331):
         #serverSocket.accept() #move this to the "connectionSocket, addr = " this line goes after the = 
         #Fill in start      #Fill in end
         try:
-           message = connectionSocket.recv()
+            message = connectionSocket.recv()
 	    print message,'::',message.split()[0],':',message.split()[1] #you're missing the rest of the statement here. 
             #Fill in start    #Fill in end
-           filename = message.split()[1]
+            filename = message.split()[1]
 	    print filename,'||',[1:]
             f = open(filename[1:])
             outputdata = f.read()
@@ -61,9 +61,9 @@ def webServer(port=13331):
             #Fill in end
             
 
-     serverSocket.close()
-     sys.exit()  # Terminate the program after sending the corresponding data
+       serverSocket.close()
+       sys.exit()  # Terminate the program after sending the corresponding data
 
 if __name__ == "__main__":
-    webServer(13331) 
+     webServer(13331) 
 
