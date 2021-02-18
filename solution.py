@@ -17,15 +17,20 @@ def webServer(port=13331):
         #Establish the connection
         print('Ready to serve...')
         connectionSocket, addr = serverSocket.accept() ###()#you dont need the port numbner 13331, the function definition is already setting the port to 13331
-        serverSocket.accept() #move this to the "connectionSocket, addr = " this line goes after the = 
+        #serverSocket.accept() #move this to the "connectionSocket, addr = " this line goes after the = 
         #Fill in start      #Fill in end
         try:
-            message = ()#you're missing the rest of the statement here. 
+            message = connectionSocket.recv()
+	    print message,'::',message.split()[0],':',message.split()[1] #you're missing the rest of the statement here. 
             #Fill in start    #Fill in end
             filename = message.split()[1]
+	    print filename,'||',[1:]
             f = open(filename[1:])
-            outputdata = () #missing the rest of the statement here
-            #Fill in start     #Fill in end
+            outputdata = f.read()
+	    #missing the rest of the statement here
+            #Fill in start
+	    print outputdata
+            #Fill in end
 
             #Send one HTTP header line into socket
             #Fill in start
@@ -37,9 +42,9 @@ def webServer(port=13331):
 
             #Send the content of the requested file to the client
             for i in range(0, len(outputdata)):
-                connectionSocket.send(outputdata[i].encode())
+            connectionSocket.send(outputdata[i])
 
-            connectionSocket.send("\r\n".encode())
+            #connectionSocket.send("\r\n".encode())
             connectionSocket.close()
         except IOError:
             
