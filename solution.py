@@ -14,7 +14,7 @@ def webServer(port=13331):
 
     while True:
         # Establish the connection
-        print('Ready to serve...') need to comment out gradescope doesn’t like print statements
+        #print('Ready to serve...') need to comment out gradescope doesn’t like print statements
         connectionSocket, addr = serverSocket.accept()
 
         # Fill in start      #Fill in end
