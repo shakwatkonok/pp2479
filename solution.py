@@ -19,7 +19,7 @@ def webServer(port=13331):
        
         #Fill in start      #Fill in end
         try:
-           message = connectionSocket.recv() #need to enter the maximum size of data received at once for the parameter 1024
+           message = connectionSocket.recv(1024) #need to enter the maximum size of data received at once for the parameter 1024
 	    #print message,'::',message.split()[0],':',message.split()[1] -not sure what this is but you don’t need it
             #Fill in start    #Fill in end
            filename = message.split()[1]
@@ -42,8 +42,7 @@ def webServer(port=13331):
             #Send the content of the requested file to the client
             for i in range(0, len(outputdata)):
             connectionSocket.send(outputdata[i]) #needs to be encoded see above for how to encode
-
-            #connectionSocket.send("\r\n".encode())#this is needed dont comment out
+            connectionSocket.send("\r\n".encode())#this is needed dont comment out
 
             connectionSocket.close()
         except IOError:
