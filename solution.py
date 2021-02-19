@@ -14,13 +14,13 @@ def webServer(port=13331):
 
     while True:
         # Establish the connection
-        print('Ready to serve...') need to comment out gradescope doesn’t like print statements
+        print('Ready to serve...')
         connectionSocket, addr = serverSocket.accept()
 
         # Fill in start      #Fill in end
         try:
             message = connectionSocket.recv(1024)  # need to enter the maximum size of data received at once for the parameter 1024
-            # print message,'::',message.split()[0],':',message.split()[1] -not sure what this is but you don’t need it
+            # print message,'::',message.split()[0],':',message.split()[1] 
             # Fill in start    #Fill in end
             filename = message.split()[1]
             # print filename,'||',[1:] No print statement
@@ -35,7 +35,7 @@ def webServer(port=13331):
             # Fill in start
             # Need to send a http header
             connectionSocket.send('HTTP/1.0 200 OK\r\n\n\n'.encode())
-        # connectionSocket.send(outputdata) #notsure if this is needed.  You need to write out the header see above.
+        # connectionSocket.send(outputdata) #notsure if this is needed. 
 
         # Fill in end
 
