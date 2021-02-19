@@ -24,8 +24,8 @@ def webServer(port=13331):
             #Fill in start    #Fill in end
            filename = message.split()[1]
 	    #print filename,'||',[1:] No print statement
-            f = open(filename[1:])
-            outputdata = f.read()
+           f = open(filename[1:])
+           outputdata = f.read()
 	
             #Fill in start
 	    #print outputdata
