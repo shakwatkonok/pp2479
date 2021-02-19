@@ -14,7 +14,7 @@ def webServer(port=13331):
 
     while True:
         # Establish the connection
-        #print('Ready to serve...') need to comment out gradescope doesn’t like print statements
+        print('Ready to serve...') need to comment out gradescope doesn’t like print statements
         connectionSocket, addr = serverSocket.accept()
 
         # Fill in start      #Fill in end
@@ -34,7 +34,7 @@ def webServer(port=13331):
             # Send one HTTP header line into socket
             # Fill in start
             # Need to send a http header
-            connectionSocket.send('HTTP/1.0 200 OK\r\n\n\n'.encode())
+            connectionSocket.send('HTTP/1.0 200 OK\r\n\r\n'.encode())
         # connectionSocket.send(outputdata) #notsure if this is needed.  You need to write out the header see above.
 
         # Fill in end
@@ -50,7 +50,7 @@ def webServer(port=13331):
 
              connectionSocket.close()
 
-            #except IOError:
+         except IOError:
 
 # Send response message for file not found (404)
 # Fill in start
