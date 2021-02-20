@@ -39,7 +39,7 @@ def webServer(port=13331):
 
             for i in range(0, len(outputdata)):
 
-             connectionSocket.send(outputdata[i].encode())  # needs to be encoded see above for how to encode
+             connectionSocket.send(outputdata[i].encode())  
 
 
              connectionSocket.send("\r\n".encode()) #this is needed dont comment out
@@ -52,7 +52,7 @@ def webServer(port=13331):
 # Fill in start
 
 # print '404 Not Found'
-             connectionSocket.send('HTTP/1.1 404 Not Found\r\n'.encode())  # need the encode statement here
+             connectionSocket.send('HTTP/1.1 404 Not Found\r\n'.encode()) 
 
 # Fill in end
 
