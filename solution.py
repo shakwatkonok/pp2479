@@ -37,9 +37,8 @@ def webServer(port=13331):
                 connectionSocket.send("\r\n".encode())
             connectionSocket.close()
 
-        except (BrokenPipeError, IOError):
-            pass
-        #except IOError:
+        
+        except IOError:
             # Send response message for file not found (404)
             # Fill in start
             connectionSocket.send('HTTP/1.1 404 Not Found\r\n\r\n'.encode())
@@ -49,6 +48,8 @@ def webServer(port=13331):
             connectionSocket.close()
             #break;
         # Fill in end
+        except (BrokenPipeError, IOError):
+            pass
          
         serverSocket.close()
         sys.exit()  # Terminate the program after sending the corresponding data
