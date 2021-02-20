@@ -25,7 +25,7 @@ def webServer(port=13331):
 
             # Send one HTTP header line into socket
             # Fill in start
-            connectionSocket.sendall('HTTP/1.0 200 OK\r\n\r\n'.encode())
+            connectionSocket.send('HTTP/1.0 200 OK\r\n\r\n'.encode())
              # Fill in end
 
             # Send the content of the requested file to the client
@@ -35,7 +35,7 @@ def webServer(port=13331):
             for i in range(0, len(outputdata)):
                 connectionSocket.send(outputdata[i].encode())
 
-                connectionSocket.send("\r\n\r\n".encode())
+                connectionSocket.sendall("\r\n\r\n".encode())
                 connectionSocket.close()
 
         except IOError:
