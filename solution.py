@@ -58,9 +58,9 @@ def webServer(port=13331):
 
 
 
-            connectionSocket.send("\r\n".encode())
+                connectionSocket.send("\r\n".encode())
 
-            connectionSocket.close()
+                connectionSocket.close()
 
         except IOError:
 
