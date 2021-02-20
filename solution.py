@@ -1,6 +1,6 @@
 # import socket module
 from socket import *
-#import sys  # In order to terminate the pr
+import sys  # In order to terminate the pr
 
 def webServer(port=13331):
     serverSocket = socket(AF_INET, SOCK_STREAM)
@@ -25,7 +25,7 @@ def webServer(port=13331):
 
             # Send one HTTP header line into socket
             # Fill in start
-            connectionSocket.sendall('HTTP/1.0 200 OK\r\n'.encode())
+            connectionSocket.sendall('HTTP/1.0 200 OK\r\n\r\n'.encode())
              # Fill in end
 
             # Send the content of the requested file to the client
