@@ -47,7 +47,7 @@ def webServer(port=13331):
             # Fill in start
             #connectionSocket.close()
         # Fill in end
-        serverSocket.accept()
+        self.s.close 
         serverSocket.close()
         sys.exit()  # Terminate the program after sending the corresponding data
 
