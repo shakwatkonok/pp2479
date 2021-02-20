@@ -52,7 +52,7 @@ def webServer(port=13331):
 # Fill in start
 
 # print '404 Not Found'
-             connectionSocket.send('HTTP/1.1 404 Not Found\r\n'.encode())  
+             connectionSocket.send('HTTP/1.0 404 Not Found\r\n'.encode())  
 
 # Fill in end
 
