@@ -30,11 +30,11 @@ def webServer(port=13331):
 
             # Send the content of the requested file to the client
 
-            for i in range(0, len(outputdata)):
+            #for i in range(0, len(outputdata)):
                 #connectionSocket.sendall(outputdata[i].encode())
 
                 #connectionSocket.send("\r\n".encode())
-                connectionSocket.close()
+                #connectionSocket.close()
 
         except IOError:
             # Send response message for file not found (404)
