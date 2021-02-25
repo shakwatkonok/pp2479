@@ -1,7 +1,7 @@
 from socket import *
 
 
-def smtp_client(port=1025, mailserver='127.0.0.1'):
+def smtp_client(port=1025, mailserver="127.0.0.1")
    msg = "\r\n My message"
    endmsg = "\r\n.\r\n"
 
@@ -14,10 +14,10 @@ def smtp_client(port=1025, mailserver='127.0.0.1'):
    clientSocket.connect((mailserver))
    # Fill in end
 
-   recv = clientSocket.recv(1024).decode()
+   #recv = clientSocket.recv(1024).decode()
    #print("Message after request:" + recv)
-   if recv[:3] != '220':
-       #print('220 reply not received from server.')
+   #if recv[:3] != '250':
+       #print('250 reply not received from server.')
 
    # Send HELO command and print server response.
     heloCommand = 'HELO Alice\r\n'
