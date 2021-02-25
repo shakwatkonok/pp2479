@@ -11,7 +11,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1')
 
    # Fill in start
    clientSocket = socket(AF_INET,SOCK_STREAM)
-   clientSocket.connect(('127.0.0.1,1025'))
+   clientSocket.connect((127.0.0.1, 1025))
    # Fill in end
 
    #recv = clientSocket.recv(1024).decode()
@@ -24,7 +24,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1')
    clientSocket.send(heloCommand.encode())
    recv1 = clientSocket.recv(1024).decode()
    #print(recv1)
-   if recv1[:3] != '250':
+    if recv1[:3] != '250':
        #print('250 reply not received from server.')
 
    # Send MAIL FROM command and print server response.
@@ -53,7 +53,7 @@ def smtp_client(port=1025, mailserver='127.0.0.1')
    clientSocket.send(data.encode())
    recv4 = clientSocket.recv(1024)
    #print("After DATA command: "+recv4)
-   if recv1[:3] != '250':
+    if recv1[:3] != '250':
        #print('250 reply not received from server.')
    # Fill in end
 
