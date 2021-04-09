@@ -123,6 +123,6 @@ def ping(host, timeout=1):
     return vars
     #return delay
 
-#if __name__ == '__main__':
+if __name__ == '__main__':
     #ping("google.co.il")
 ping("google.co.il")
