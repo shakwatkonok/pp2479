@@ -5,8 +5,7 @@ import struct
 import time
 import select
 import binascii
-import ICMPPinger
-ICMPPinger.ping("<URL or IP>", timeout=<time in sec>)
+sudo python -c 'import ICMPPinger; ICMPPinger.ping("<URL or IP>", timeout=<time in sec>)'
 
 #sudo python ICMPPinger.py
 
