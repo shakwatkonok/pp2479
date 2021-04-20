@@ -5,6 +5,7 @@ import struct
 import time
 import select
 import binascii
+import sudo python icmppinger.py
 
 label = '*************{0}*************'
 ICMP_ECHO_REQUEST = 8
@@ -64,7 +65,7 @@ def build_packet():
     return packet
 
 def get_route(hostname):
-    print label.format(hostname)
+    #print label.format(hostname)
     timeLeft = TIMEOUT
     for ttl in xrange(1,MAX_HOPS):
         for tries in xrange(TRIES):
