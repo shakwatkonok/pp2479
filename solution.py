@@ -89,12 +89,12 @@ def get_route(hostname):
                 whatReady = select.select([mySocket], [], [], timeLeft)
                 howLongInSelect = (time.time() - startedSelect)
                 if whatReady[0] == []: # Timeout
-                    print " * * * Request timed out."
+                    print (" * * * Request timed out.")
                 recvPacket, addr = mySocket.recvfrom(1024)
                 timeReceived = time.time()
                 timeLeft = timeLeft - howLongInSelect
                 if timeLeft <= 0:
-                    print " * * * Request timed out."
+                    print (" * * * Request timed out.")
             except socket.timeout:
                 continue
             else:
