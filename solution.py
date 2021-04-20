@@ -5,7 +5,7 @@ import struct
 import time
 import select
 import binascii
-import sudo py icmppinger.py
+import sudo icmppinger.py
 
 label = '*************{0}*************'
 ICMP_ECHO_REQUEST = 8
