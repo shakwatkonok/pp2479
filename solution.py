@@ -97,30 +97,28 @@ def get_route(hostname):
                     print (" * * * Request timed out.")
             except socket.timeout:
                 continue
-            else:
-                #Fill in start
-                #Fetch the icmp type from the IP packet
-                icmpHeaderContent = recvPacket[20:28]
-                type, code, checksum, packetID, sequence = struct.unpack("bbHHh", icmpHeaderContent)
-                printname = get_name_or_ip(addr[0])
-                #Fill in end
-                if type == 11:
+                            else:
+                icmpHeader = recvPacket[20:28]
+                request_type, code, checksum, packetID, sequence = struct.unpack("bbHHh", icmpHeader)
+
+                if request_type == 11:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    print "( %d rtt=%.0f ms %s %(ttl, (timeReceived-t)*1000, printname)))
-                elif type == 3:
+                    print(" %d   rtt=%.0f ms %s" % (ttl, (timeReceived - t) * 1000, addr[0]))
+                elif request_type == 3:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    print " %d rtt=%.0f ms %s" %(ttl, (timeReceived-t)*1000, printname)
-                elif type == 0:
+                    print(" %d   rtt=%.0f ms %s" % (ttl, (timeReceived - t) * 1000, addr[0]))
+                elif request_type == 0:
                     bytes = struct.calcsize("d")
                     timeSent = struct.unpack("d", recvPacket[28:28 + bytes])[0]
-                    print " %d rtt=%.0f ms %s" %(ttl, (timeReceived - timeSent)*1000, printname)
+                    print(" %d   rtt=%.0f ms %s" % (ttl, (timeReceived - timeSent) * 1000, addr[0]))
                     return
                 else:
-                    print "error"
-                break
+                    print("error")
+                    break
             finally:
                 mySocket.close()
+            
 
 get_route("www.google.com")
