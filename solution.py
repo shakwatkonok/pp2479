@@ -69,8 +69,8 @@ def build_packet():
 def get_route(hostname):
     #print label.format(hostname)
     timeLeft = TIMEOUT
-    for ttl in xrange(1,MAX_HOPS):
-        for tries in xrange(TRIES):
+    for ttl in range(1,MAX_HOPS):
+        for tries in range(TRIES):
             destAddr = socket.gethostbyname(hostname)
             
             #Fill in start
