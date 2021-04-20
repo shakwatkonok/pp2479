@@ -97,7 +97,7 @@ def get_route(hostname):
                     print (" * * * Request timed out.")
             except socket.timeout:
                 continue
-                            else:
+            else:
                 icmpHeader = recvPacket[20:28]
                 request_type, code, checksum, packetID, sequence = struct.unpack("bbHHh", icmpHeader)
 
