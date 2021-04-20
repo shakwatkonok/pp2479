@@ -6,7 +6,7 @@ import time
 import select
 import binascii
 
-import sudo ICMPPinger; ICMPPinger.ping("<URL or IP>", timeout=<time in sec>)
+import sudo ICMPPinger
 #sudo python ICMPPinger.py
 
 label = '*************{0}*************'
