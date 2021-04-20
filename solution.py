@@ -5,8 +5,10 @@ import struct
 import time
 import select
 import binascii
+import ICMPPinger
+ICMPPinger.ping("<URL or IP>", timeout=<time in sec>)
 
-sudo python ICMPPinger.py
+#sudo python ICMPPinger.py
 
 label = '*************{0}*************'
 ICMP_ECHO_REQUEST = 8
